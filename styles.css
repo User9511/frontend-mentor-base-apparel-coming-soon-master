@@ -1,0 +1,176 @@
+@import url("https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400;600&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --Desaturated-Red: hsl(0, 36%, 70%);
+  --Soft-Red: hsl(0, 93%, 68%);
+  --Dark-Grayish-Red: hsl(0, 6%, 24%);
+
+  --step--2: clamp(0.7rem, calc(0.81rem + -0.09vw), 0.79rem);
+  --step--1: clamp(0.89rem, calc(0.88rem + 0.05vw), 0.94rem);
+  --step-0: clamp(1rem, calc(0.95rem + 0.25vw), 1.25rem);
+  --step-1: clamp(1.13rem, calc(1.02rem + 0.54vw), 1.67rem);
+  --step-2: clamp(1.27rem, calc(1.07rem + 0.96vw), 2.22rem);
+  --step-3: clamp(1.42rem, calc(1.12rem + 1.54vw), 2.96rem);
+  --step-4: clamp(1.6rem, calc(1.13rem + 2.34vw), 3.95rem);
+  --step-5: clamp(1.8rem, calc(1.11rem + 3.46vw), 5.26rem);
+  --step-6: clamp(2.03rem, calc(1.03rem + 4.99vw), 7.01rem);
+  --step-7: clamp(2.28rem, calc(0.87rem + 7.07vw), 9.35rem);
+
+  --space-3xs: clamp(0.25rem, calc(0.24rem + 0.06vw), 0.31rem);
+  --space-2xs: clamp(0.5rem, calc(0.48rem + 0.13vw), 0.63rem);
+  --space-xs: clamp(0.75rem, calc(0.71rem + 0.19vw), 0.94rem);
+  --space-s: clamp(1rem, calc(0.95rem + 0.25vw), 1.25rem);
+  --space-m: clamp(1.5rem, calc(1.43rem + 0.38vw), 1.88rem);
+  --space-l: clamp(2rem, calc(1.9rem + 0.5vw), 2.5rem);
+  --space-xl: clamp(3rem, calc(2.85rem + 0.75vw), 3.75rem);
+  --space-2xl: clamp(4rem, calc(3.8rem + 1vw), 5rem);
+  --space-3xl: clamp(6rem, calc(5.7rem + 1.5vw), 7.5rem);
+  --space-4xl: clamp(7rem, calc(6.65rem + 1.75vw), 8.75rem);
+  --space-5xl: clamp(8rem, calc(7.6rem + 2vw), 10rem);
+  --space-6xl: clamp(9rem, calc(8.55rem + 2.25vw), 11.25rem);
+  --space-7xl: clamp(10rem, calc(9.5rem + 2.5vw), 12.5rem);
+  --space-8xl: clamp(11rem, calc(10.45rem + 2.75vw), 13.75rem);
+
+  /* One-up pairs */
+  --space-3xs-2xs: clamp(0.25rem, calc(0.18rem + 0.38vw), 0.63rem);
+  --space-2xs-xs: clamp(0.5rem, calc(0.41rem + 0.44vw), 0.94rem);
+  --space-xs-s: clamp(0.75rem, calc(0.65rem + 0.5vw), 1.25rem);
+  --space-s-m: clamp(1rem, calc(0.83rem + 0.88vw), 1.88rem);
+  --space-m-l: clamp(1.5rem, calc(1.3rem + 1vw), 2.5rem);
+  --space-l-xl: clamp(2rem, calc(1.65rem + 1.75vw), 3.75rem);
+  --space-xl-2xl: clamp(3rem, calc(2.6rem + 2vw), 5rem);
+  --space-2xl-3xl: clamp(4rem, calc(3.3rem + 3.5vw), 7.5rem);
+  --space-3xl-4xl: clamp(6rem, calc(5.45rem + 2.75vw), 8.75rem);
+  --space-4xl-5xl: clamp(7rem, calc(6.4rem + 3vw), 10rem);
+  --space-5xl-6xl: clamp(8rem, calc(7.35rem + 3.25vw), 11.25rem);
+  --space-6xl-7xl: clamp(9rem, calc(8.3rem + 3.5vw), 12.5rem);
+  --space-7xl-8xl: clamp(10rem, calc(9.25rem + 3.75vw), 13.75rem);
+}
+
+body {
+  font-family: "Josefin Sans", sans-serif;
+  background-color: #fff;
+  position: relative;
+  max-width: 2000px;
+  margin: 0 auto;
+}
+
+img {
+  width: 100%;
+}
+
+.outer-container {
+  display: grid;
+  grid-template-columns: 1fr;
+  text-align: center;
+  color: var(--Desaturated-Red);
+}
+
+.text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 4rem;
+}
+
+.logo {
+  max-width: 8rem;
+  margin: 2rem;
+  display: block;
+}
+
+.logo-desktop {
+  display: none;
+}
+
+/* Typography */
+.hero-text {
+  font-size: var(--step-2);
+  text-transform: uppercase;
+  letter-spacing: 10px;
+  margin: 0 var(--space-xl);
+  color: var(--Dark-Grayish-Red);
+}
+
+span {
+  color: var(--Desaturated-Red);
+  font-weight: 300;
+}
+
+p {
+  line-height: 1.5;
+  margin: var(--space-s-m);
+}
+
+form {
+  border: 1px solid var(--Dark-Grayish-Red);
+  width: 80%;
+}
+/* Tablet View */
+@media (min-width: 501px) and (max-width: 1024px) {
+  .text-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: var(--space-2xl) !important;
+  }
+}
+
+/* Desktop View */
+@media screen and (min-width: 500px) {
+  img {
+    height: 100%;
+    object-fit: cover;
+  }
+  .outer-container {
+    display: grid;
+    min-height: 100vh;
+    grid-template-columns: 1.3fr 1fr;
+    text-align: left;
+    background: url(./images/bg-pattern-desktop.svg);
+    background-repeat: no-repeat;
+    background-size: contain;
+  }
+
+  .text-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: var(--space-7xl-8xl);
+  }
+
+  .hero-text {
+    font-size: var(--step-3);
+    margin: 0;
+  }
+
+  p {
+    margin: 0;
+    font-size: var(--step-0);
+    line-height: 1.8;
+  }
+
+  .hero-image-container {
+    order: 2;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .logo-desktop {
+    display: block;
+    position: absolute;
+    top: 5rem;
+    height: auto;
+    width: auto;
+  }
+}
