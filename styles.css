@@ -111,8 +111,8 @@ p {
 }
 
 #email-container {
-  height: 3rem;
-  width: auto;
+  height: 3.5rem;
+  width: 100%;
   border-radius: 30px;
   border: 2px solid #ce9797;
   display: flex;
@@ -126,6 +126,8 @@ p {
   outline: none;
   background-color: inherit;
   z-index: 2;
+  width: 60%;
+  height: 100%;
 }
 
 #error-svg {
@@ -133,8 +135,8 @@ p {
 }
 
 #submit-btn {
-  width: 6rem;
-  height: 3rem;
+  width: 20%;
+  height: 3.5rem;
   border-radius: 30px;
   position: relative;
   left: 2px;
@@ -152,29 +154,19 @@ p {
 
 #error {
   color: var(--Soft-Red);
-  position: relative;
-  left: -1rem;
-}
-
-/* Tablet View */
-@media (min-width: 501px) and (max-width: 1024px) {
-  .text-container {
-    display: flex;
-    align-items: flex-start;
-    gap: 2rem;
-    margin: var(--space-2xl) !important;
-  }
+  margin-left: -4rem;
 }
 
 /* Desktop View */
 @media screen and (min-width: 500px) {
   img {
-    max-height: 100%;
+    height: 100%;
     object-fit: cover;
+    display: block;
   }
   .outer-container {
     display: grid;
-    max-height: 100vh;
+    min-height: 100vh;
     grid-template-columns: 1.3fr 1fr;
     text-align: left;
     background: url(./images/bg-pattern-desktop.svg);
@@ -218,8 +210,19 @@ p {
 
   #error {
     color: var(--Soft-Red);
+
     position: relative;
-    left: 1.5rem;
-    top: -1rem;
+    top: -1.5rem;
+    margin-left: 2rem;
+  }
+}
+
+/* Tablet View */
+@media (min-width: 501px) and (max-width: 1024px) {
+  .text-container {
+    display: flex;
+    align-items: flex-start;
+    gap: 2rem;
+    margin: var(--space-2xl) !important;
   }
 }
