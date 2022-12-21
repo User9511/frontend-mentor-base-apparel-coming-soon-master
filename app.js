@@ -1,31 +1,22 @@
-const submitBtn = document.getElementById("submit-btn");
-const error = document.getElementById("error");
-const errorSvg = document.getElementById("error-svg");
+const form = document.querySelector("form"),
+  eInput = form.querySelector(".input"),
+  text = form.querySelector(".text");
 
-const inputEl = document.getElementById("email");
-
-const emailValidation = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
-
-// submitBtn.addEventListener("click", function () {
-//   if (inputEl.value.length === 0 || !inputEl.value.match(emailValidation)) {
-//     error.style.display = "inline";
-//     errorSvg.style.display = "inline";
-//     error.textContent = "Please provide a valid email address";
-//   } else {
-//     error.style.display = "inline";
-//     error.style.color = "green";
-//     error.textContent = "Thank you for subscribing to our newsletter!";
-//   }
-// });
-
-function formSubmitted() {
-  if (inputEl.value.length === 0 || !inputEl.value.match(emailValidation)) {
-    error.style.display = "inline";
-    errorSvg.style.display = "inline";
-    error.textContent = "Please provide a valid email address";
+form.addEventListener("submit", (e) => {
+  e.preventDefault(); //preventing form from submitting
+  let pattern = /^[^ ]+@[^ ]+\.[a-z]{2,3}$/; //Regex pattern to validate email
+  form.classList.add("error");
+  form.classList.remove("valid");
+  if (eInput.value == "") {
+    text.innerText = "Email can't be blank";
+    eInput.classList.add("error-border");
+  } else if (!eInput.value.match(pattern)) {
+    //if patter is not matched with user's enter value
+    text.innerText = "Please enter a valid email";
+    eInput.classList.add("error-border");
   } else {
-    error.style.display = "inline";
-    error.style.color = "green";
-    error.textContent = "Thank you for subscribing to our newsletter!";
+    form.classList.replace("error", "valid"); //replacing error class with valid class
+    text.innerText = "Thank you, let's get started!";
+    eInput.classList.add("valid-border");
   }
-}
+});
